@@ -4,7 +4,7 @@ export default function FriendsPage() {
       <div className="w-full max-w-5xl">
         <h1 className="text-4xl font-bold mb-8 text-foreground">My Friends</h1>
         <ul className="space-y-3 text-foreground text-lg">
-          <li>• Tejas Gundapaneni - Teamwork</li>
+          <li>• Tejas Gundapaneni - Teamwork - Update 1</li>
           <li>• Ishaan Nulu</li>
           <li>• Siddharth Kakarla</li>
           <li>• Dhruvatej Mandadi</li>
