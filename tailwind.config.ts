@@ -11,6 +11,15 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Big Picture Learning Theme Colors
+        "ocean-start": "#22d3ee", // cyan-400
+        "ocean-end": "#3b82f6", // blue-500
+        "lavender-start": "#c084fc", // purple-400
+        "lavender-end": "#f472b6", // pink-400
+        "golden-start": "#fbbf24", // yellow-400
+        "golden-end": "#f97316", // orange-500
+        "forest-start": "#4ade80", // green-400
+        "forest-end": "#06b6d4", // cyan-500
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
