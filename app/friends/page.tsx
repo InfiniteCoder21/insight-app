@@ -21,13 +21,13 @@ export default function FriendsPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
-              { name: "Tejas Gundapaneni", role: "Teamwork Leader", gradient: "from-cyan-400 to-blue-500", emoji: "🚀" },
-              { name: "Ishaan Nulu", role: "Creative Explorer", gradient: "from-purple-400 to-pink-500", emoji: "🎨" },
-              { name: "Siddharth Kakarla", role: "Innovation Guide", gradient: "from-green-400 to-emerald-500", emoji: "💡" },
-              { name: "Dhruvatej Mandadi", role: "Tech Wizard", gradient: "from-yellow-400 to-orange-500", emoji: "⚡" },
-              { name: "Krish Sughand", role: "Learning Champion", gradient: "from-pink-400 to-rose-500", emoji: "📚" },
-              { name: "Ben Burnside", role: "Community Builder", gradient: "from-blue-400 to-cyan-500", emoji: "🌍" },
-              { name: "Saikavin Rajarajaswaran", role: "Growth Master", gradient: "from-indigo-400 to-purple-500", emoji: "🌱" },
+              { name: "Tejas Gundapaneni", role: "Teamwork - Update 2", gradient: "from-cyan-400 to-blue-500", emoji: "🚀" },
+              { name: "Ishaan Nulu", role: "", gradient: "from-purple-400 to-pink-500", emoji: "🎨" },
+              { name: "Siddharth Kakarla", role: "", gradient: "from-green-400 to-emerald-500", emoji: "💡" },
+              { name: "Dhruvatej Mandadi", role: "", gradient: "from-yellow-400 to-orange-500", emoji: "⚡" },
+              { name: "Krish Sughand", role: "", gradient: "from-pink-400 to-rose-500", emoji: "📚" },
+              { name: "Ben Burnside", role: "", gradient: "from-blue-400 to-cyan-500", emoji: "🌍" },
+              { name: "Saikavin Rajarajaswaran", role: "", gradient: "from-indigo-400 to-purple-500", emoji: "🌱" },
             ].map((friend, index) => (
               <div
                 key={index}
