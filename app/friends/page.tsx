@@ -21,7 +21,7 @@ export default function FriendsPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
-              { name: "Tejas Gundapaneni", role: "Teamwork - Update 2", gradient: "from-cyan-400 to-blue-500", emoji: "🚀" },
+              { name: "Tejas Gundapaneni", role: "Teamwork - Update 3", gradient: "from-cyan-400 to-blue-500", emoji: "🚀" },
               { name: "Ishaan Nulu", role: "", gradient: "from-purple-400 to-pink-500", emoji: "🎨" },
               { name: "Siddharth Kakarla", role: "", gradient: "from-green-400 to-emerald-500", emoji: "💡" },
               { name: "Dhruvatej Mandadi", role: "", gradient: "from-yellow-400 to-orange-500", emoji: "⚡" },
