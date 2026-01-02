@@ -19,15 +19,27 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      const { error } = await supabase.auth.signInWithPassword({
+      const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
       });
 
-      if (error) throw error;
+      if (error) {
+        // More helpful error messages
+        if (error.message.includes("Invalid login credentials")) {
+          setError("Invalid email or password. Please check your credentials or sign up if you don't have an account.");
+        } else if (error.message.includes("Email not confirmed")) {
+          setError("Please verify your email address before signing in. Check your inbox for the confirmation link.");
+        } else {
+          setError(error.message || "An error occurred during sign in");
+        }
+        return;
+      }
 
-      router.push("/chapters");
-      router.refresh();
+      if (data?.user) {
+        router.push("/chapters");
+        router.refresh();
+      }
     } catch (err: any) {
       setError(err.message || "An error occurred during sign in");
     } finally {
