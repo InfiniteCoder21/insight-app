@@ -47,21 +47,17 @@ export async function updateSession(request: NextRequest) {
   const { data } = await supabase.auth.getClaims();
   const user = data?.claims;
 
-  if (
-    request.nextUrl.pathname !== "/" &&
-    !user &&
-    !request.nextUrl.pathname.startsWith("/login") &&
-    !request.nextUrl.pathname.startsWith("/auth") &&
-    !request.nextUrl.pathname.startsWith("/friends") &&
-    !request.nextUrl.pathname.startsWith("/chapters") &&
-    !request.nextUrl.pathname.startsWith("/games") &&
-    !request.nextUrl.pathname.startsWith("/profile") &&
-    !request.nextUrl.pathname.startsWith("/community") &&
-    !request.nextUrl.pathname.startsWith("/about")
-  ) {
-    // no user, potentially respond by redirecting the user to the login page
+  // Protected routes that require authentication
+  const protectedPaths = ["/chapters", "/games", "/profile"];
+  const isProtectedPath = protectedPaths.some(path => 
+    request.nextUrl.pathname.startsWith(path)
+  );
+
+  if (isProtectedPath && !user) {
+    // Redirect to login for protected routes
     const url = request.nextUrl.clone();
     url.pathname = "/auth/login";
+    url.searchParams.set("redirect", request.nextUrl.pathname);
     return NextResponse.redirect(url);
   }
 
