@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import Link from "next/link";
-import { DarkModeToggle } from "@/components/dark-mode-toggle";
+import { AuthNav } from "@/components/auth-nav";
 import "./globals.css";
 
 const defaultUrl = process.env.VERCEL_URL
@@ -51,43 +51,8 @@ export default function RootLayout({
                 </div>
               </Link>
               
-              {/* Desktop Navigation Links */}
-              <div className="hidden md:flex items-center space-x-1 font-inter">
-                <Link href="/" className="hover:bg-amber-400/10 px-4 py-2 rounded-lg transition font-medium text-sm">
-                  Home
-                </Link>
-                <Link href="/friends" className="hover:bg-amber-400/10 px-4 py-2 rounded-lg transition font-medium text-sm">
-                  Community
-                </Link>
-                <Link href="/about" className="hover:bg-amber-400/10 px-4 py-2 rounded-lg transition font-medium text-sm">
-                  About
-                </Link>
-                <div className="ml-4 flex items-center gap-3">
-                  <DarkModeToggle />
-                  <Link 
-                    href="/auth/login" 
-                    className="px-5 py-2 rounded-lg transition font-medium text-sm border border-amber-400/30 hover:border-amber-400/50 hover:bg-amber-400/10"
-                  >
-                    Sign In
-                  </Link>
-                  <Link 
-                    href="/auth/signup" 
-                    className="px-5 py-2 rounded-lg transition font-semibold text-sm bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-900"
-                  >
-                    Get Started
-                  </Link>
-                </div>
-              </div>
-
-              {/* Mobile Menu Button */}
-              <div className="md:hidden flex items-center gap-2">
-                <DarkModeToggle />
-                <button className="text-white p-2 hover:bg-amber-400/10 rounded-lg transition" aria-label="Open menu">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-                </button>
-              </div>
+              {/* Auth-Aware Navigation */}
+              <AuthNav />
             </div>
           </div>
         </nav>
