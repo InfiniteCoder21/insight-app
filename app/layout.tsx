@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import Link from "next/link";
+import Image from "next/image";
 import { AuthNav } from "@/components/auth-nav";
 import "./globals.css";
 
@@ -42,8 +43,14 @@ export default function RootLayout({
             <div className="flex items-center justify-between h-20">
               {/* Logo */}
               <Link href="/" className="flex items-center space-x-3 hover:opacity-90 transition group">
-                <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-600 rounded flex items-center justify-center text-2xl font-bold text-slate-900 group-hover:scale-110 transition">
-                  BP
+                <div className="w-10 h-08 bg-gradient-to-br from-amber-400 to-amber-600 rounded flex items-center justify-center overflow-hidden group-hover:scale-110 transition">
+                  <Image 
+                    src="/images/cosmos.png" 
+                    alt="Logo" 
+                    width={40} 
+                    height={40} 
+                    className="object-contain"
+                  />
                 </div>
                 <div>
                   <span className="font-playfair font-bold text-2xl block tracking-tight">Big Picture Learning</span>
